@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.edazh.gank3rd.vo.Gank" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title_gank"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="支持百分比、相对布局和数学表达式的布局" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/caption_gank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+            app:layout_constraintLeft_toLeftOf="@id/title_gank"
+            app:layout_constraintTop_toBottomOf="@id/title_gank"
+            tools:text="zzhoujay  2018-08-26" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

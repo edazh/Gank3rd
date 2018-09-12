@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/mobile_navigation">
-
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/gank_page_fragment">
+    <fragment
+        android:id="@+id/gank_page_fragment"
+        android:name="com.edazh.gank3rd.ui.GankFragment"
+        android:label="fragment_gank"
+        tools:layout="@layout/fragment_gank" />
+    <fragment
+        android:id="@+id/weal_page_fragment"
+        android:name="com.edazh.gank3rd.ui.WealFragment"
+        android:label="fragment_weal"
+        tools:layout="@layout/fragment_read" />
+    <fragment
+        android:id="@+id/read_page_fragment"
+        android:name="com.edazh.gank3rd.ui.ReadFragment"
+        android:label="fragment_read"
+        tools:layout="@layout/fragment_weal" />
 </navigation>

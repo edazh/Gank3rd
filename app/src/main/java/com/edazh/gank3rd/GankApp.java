@@ -4,6 +4,8 @@ import android.app.Application;
 
 import com.edazh.gank3rd.api.GankService;
 import com.edazh.gank3rd.api.LiveDataCallAdapterFactory;
+import com.edazh.gank3rd.db.GankDatabase;
+import com.edazh.gank3rd.db.GankRepository;
 import com.edazh.gank3rd.util.Constant;
 
 import retrofit2.Retrofit;
@@ -18,7 +20,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class GankApp extends Application {
     private AppExecutors mExecutors;
-    private static GankService mService;
+    private GankService mService;
 
     @Override
     public void onCreate() {
@@ -26,18 +28,22 @@ public class GankApp extends Application {
         mExecutors = new AppExecutors();
     }
 
+    public GankDatabase getDatebase() {
+        return GankDatabase.getInstance(this);
+    }
+
+    public GankRepository getRepository() {
+        return GankRepository.getInstance(getDatebase(), getService(), mExecutors);
+    }
+
     public GankService getService() {
         if (mService == null) {
-            synchronized (GankService.class) {
-                if (mService == null) {
-                    mService = new Retrofit.Builder()
-                            .baseUrl(Constant.Network.BASE_URL)
-                            .addConverterFactory(GsonConverterFactory.create())
-                            .addCallAdapterFactory(new LiveDataCallAdapterFactory())
-                            .build()
-                            .create(GankService.class);
-                }
-            }
+            mService = new Retrofit.Builder()
+                    .baseUrl(Constant.Network.BASE_URL)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .addCallAdapterFactory(new LiveDataCallAdapterFactory())
+                    .build()
+                    .create(GankService.class);
         }
         return mService;
     }

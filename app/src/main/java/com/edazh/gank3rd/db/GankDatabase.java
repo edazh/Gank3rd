@@ -24,9 +24,6 @@ public abstract class GankDatabase extends RoomDatabase {
 
     public abstract GankDao gankDao();
 
-    private GankDatabase() {
-    }
-
     public static GankDatabase getInstance(@NonNull Context context) {
         if (sInstance == null) {
             synchronized (GankDatabase.class) {

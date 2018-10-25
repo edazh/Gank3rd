@@ -1,5 +1,7 @@
 package com.edazh.gank3rd.ui.adapter;
 
+import androidx.annotation.LayoutRes;
+
 /**
  * author : edazh
  * email : edazh@qq.com
@@ -8,9 +10,12 @@ package com.edazh.gank3rd.ui.adapter;
  * description:单一布局adapter基类
  */
 public abstract class SingleLayoutAdapter extends BaseAdapter {
+    @LayoutRes
     private final  int layoutId;
 
-    public SingleLayoutAdapter(int layoutId) {
+
+
+    public SingleLayoutAdapter(@LayoutRes int layoutId) {
         this.layoutId = layoutId;
     }
 

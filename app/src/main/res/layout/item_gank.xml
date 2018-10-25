@@ -12,30 +12,38 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="64dp">
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingBottom="8dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="8dp">
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/title_gank"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
             android:ellipsize="end"
-            android:maxLines="1"
+            android:maxLines="2"
+            android:text="@{item.desc}"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="支持百分比、相对布局和数学表达式的布局" />
+            tools:text="支持百分比、相对布局和数学表达式的布局支持百分比、相对布局和数学表达式的布局支持百分比、相对布局和数学表达式的布局" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/caption_gank"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@{item.displayWho+`  `+item.displayCreatedAt}"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="@id/title_gank"
             app:layout_constraintTop_toBottomOf="@id/title_gank"
             tools:text="zzhoujay  2018-08-26" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>

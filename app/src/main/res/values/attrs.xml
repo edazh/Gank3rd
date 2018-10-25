@@ -3,4 +3,5 @@
     <declare-styleable name="ImageView">
         <attr name="bindSrc" format="string"/>
     </declare-styleable>
+
 </resources>
